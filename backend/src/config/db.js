@@ -15,6 +15,8 @@ const getSecret = async () => {
 const initPool = async () => {
   const credentials = await getSecret();
 
+  process.env.S3_UPLOADS_BUCKET = credentials.s3_uploads_bucket;
+
   pool = mysql.createPool({
     host:     credentials.host,
     database: credentials.database,
