@@ -7,14 +7,16 @@ const s3 = new AWS.S3({ region: 'us-east-1' });
 const upload = multer({
   storage: multerS3({
     s3,
-    bucket: process.env.S3_UPLOADS_BUCKET,
+    bucket: (req, file, cb) => {
+      cb(null, process.env.S3_UPLOADS_BUCKET);
+    },
     contentType: multerS3.AUTO_CONTENT_TYPE,
     key: (req, file, cb) => {
       const filename = `orders/${Date.now()}-${file.originalname}`;
       cb(null, filename);
     }
   }),
-  limits: { fileSize: 5 * 1024 * 1024 }, // 5MB limit
+  limits: { fileSize: 5 * 1024 * 1024 },
   fileFilter: (req, file, cb) => {
     const allowedTypes = ['image/jpeg', 'image/png', 'image/webp'];
     if (allowedTypes.includes(file.mimetype)) {
