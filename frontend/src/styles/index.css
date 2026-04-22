@@ -1,1 +1,94 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
+:root {
+  --cream:       #FAF6F1;
+  --pink:        #F2A8B0;
+  --pink-dark:   #D4537E;
+  --pink-deep:   #993556;
+  --pink-light:  #FBEAF0;
+  --tan:         #E8D5A3;
+  --sage:        #A8C5A0;
+  --charcoal:    #3A3535;
+  --gray:        #7A7070;
+  --border:      rgba(58, 53, 53, 0.15);
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  background-color: var(--cream);
+  color: var(--charcoal);
+  min-height: 100vh;
+}
+
+h1, h2, h3 {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+input, select, textarea {
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: white;
+  color: var(--charcoal);
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: var(--pink-dark);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+button {
+  font-family: 'Raleway', sans-serif;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 10px 28px;
+  transition: opacity 0.2s;
+}
+
+button:hover {
+  opacity: 0.85;
+}
+
+.btn-primary {
+  background: var(--pink-dark);
+  color: white;
+  border: none;
+}
+
+.btn-secondary {
+  background: white;
+  color: var(--charcoal);
+  border: 1px solid var(--border);
+}
+
+label {
+  font-size: 13px;
+  color: var(--gray);
+  display: block;
+  margin-bottom: 6px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.field-other {
+  margin-top: 8px;
+}
