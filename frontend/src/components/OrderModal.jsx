@@ -42,7 +42,7 @@ export default function OrderModal({ onClose }) {
 
         {/* Modal header */}
         <div style={modalHeader}>
-          <img src="/assets/logo.png" alt="Nela's Bakery" style={{ height: '44px', width: 'auto' }} />
+          <img src="/assets/logo.png" alt="Nela's Bakery" style={{ height: '88px', width: 'auto' }} />
         </div>
 
         <div style={modalBody}>
