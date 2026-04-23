@@ -1,7 +1,8 @@
 const { getPool } = require('../config/db');
 const { sendConfirmationEmail } = require('../config/ses');
 
-// POST /api/orders
+const nullify = (val) => (val === undefined || val === '' ? null : val);
+
 const createOrder = async (req, res) => {
   try {
     const {
@@ -35,13 +36,21 @@ const createOrder = async (req, res) => {
         custom_notes, image_url
       ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
       [
-        customer_name, customer_email, customer_phone,
-        cake_flavor, cake_flavor_other || null,
-        shape, shape_other || null,
-        height, height_other || null,
-        size, size_other || null,
-        border, border_other || null,
-        custom_notes || null, image_url
+        nullify(customer_name),
+        nullify(customer_email),
+        nullify(customer_phone),
+        nullify(cake_flavor),
+        nullify(cake_flavor_other),
+        nullify(shape),
+        nullify(shape_other),
+        nullify(height),
+        nullify(height_other),
+        nullify(size),
+        nullify(size_other),
+        nullify(border),
+        nullify(border_other),
+        nullify(custom_notes),
+        image_url
       ]
     );
 
@@ -75,13 +84,10 @@ const createOrder = async (req, res) => {
   }
 };
 
-// GET /api/orders
 const getOrders = async (req, res) => {
   try {
     const pool = getPool();
-    const [rows] = await pool.execute(
-      'SELECT * FROM orders ORDER BY order_date DESC'
-    );
+    const [rows] = await pool.execute('SELECT * FROM orders ORDER BY order_date DESC');
     res.status(200).json(rows);
   } catch (error) {
     console.error('Error fetching orders:', error);
@@ -89,14 +95,10 @@ const getOrders = async (req, res) => {
   }
 };
 
-// GET /api/orders/:id
 const getOrderById = async (req, res) => {
   try {
     const pool = getPool();
-    const [rows] = await pool.execute(
-      'SELECT * FROM orders WHERE id = ?',
-      [req.params.id]
-    );
+    const [rows] = await pool.execute('SELECT * FROM orders WHERE id = ?', [req.params.id]);
     if (rows.length === 0) {
       return res.status(404).json({ message: 'Order not found' });
     }
@@ -107,26 +109,21 @@ const getOrderById = async (req, res) => {
   }
 };
 
-// PATCH /api/orders/:id
 const updateOrderStatus = async (req, res) => {
   try {
     const { status } = req.body;
     const validStatuses = ['pending', 'confirmed', 'completed', 'cancelled'];
-
     if (!validStatuses.includes(status)) {
       return res.status(400).json({ message: 'Invalid status value' });
     }
-
     const pool = getPool();
     const [result] = await pool.execute(
       'UPDATE orders SET status = ? WHERE id = ?',
       [status, req.params.id]
     );
-
     if (result.affectedRows === 0) {
       return res.status(404).json({ message: 'Order not found' });
     }
-
     res.status(200).json({ message: 'Order status updated' });
   } catch (error) {
     console.error('Error updating order:', error);
