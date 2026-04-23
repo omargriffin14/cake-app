@@ -64,7 +64,7 @@ export default function About() {
 }
 
 const para = {
-  fontSize: '15px',
+  fontSize: '17px',
   lineHeight: '1.85',
   color: '#5A5252',
   fontWeight: '300',
