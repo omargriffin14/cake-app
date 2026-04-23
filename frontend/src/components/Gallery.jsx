@@ -1,7 +1,7 @@
 const cakes = [
   { src: '/assets/cake1.jpeg', label: 'Birthday Celebration' },
   { src: '/assets/cake2.jpeg', label: 'Baby Shower' },
-  { src: '/assets/cake3.png',  label: 'Elegant Custom' },
+  { src: '/assets/cake5.png',  label: 'Elegant Custom' },
   { src: '/assets/cake4.jpeg', label: 'Kids Party' },
 ]
 
