@@ -4,7 +4,7 @@ export default function Hero({ onOrderClick }) {
       <div style={overlay} />
       <img src="/assets/cake3.png" alt="Hero cake" style={heroImg} />
       <div style={heroContent}>
-        <span className="section-label" style={{ color: 'rgba(255,255,255,0.8)' }}>
+        <span className="section-label" style={{ color: 'rgba(255,255,255,0.8)', fontSize: '14px' }}>
           Handcrafted to order · Raleigh, NC
         </span>
         <h1 style={heroTitle}>
@@ -66,7 +66,7 @@ const heroTitle = {
 }
 
 const heroSub = {
-  fontSize: '16px',
+  fontSize: '18px',
   fontWeight: '300',
   letterSpacing: '0.04em',
   marginBottom: '2.5rem',

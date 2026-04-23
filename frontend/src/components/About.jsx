@@ -56,7 +56,7 @@ export default function About() {
           <p style={para}>I've been creating custom cakes for over 12 years, trained in the culinary arts in South Africa where my passion for food and people first came alive. There's something magical about watching simple ingredients transform into something beautiful, and that magic never gets old for me. Now calling Raleigh, NC home, I bring that same joy and intention to every single cake I make.</p>
           <p style={para}>What sets my cakes apart is the balance. I believe dessert should delight every part of your palate — not just your sweet tooth. My cakes are crafted with a savory sensibility that's often overlooked in baking, creating flavors that are rich, layered, and truly memorable.</p>
           <p style={para}>Every cake I make is handcrafted to order, because your celebration deserves something made with care, made with detail, and made just for you. Whether it's a birthday, a baby shower, a wedding, or simply a moment worth marking — I would love to be part of it.</p>
-          <p style={{ ...para, fontFamily: 'Playfair Display, serif', fontStyle: 'italic', fontSize: '17px', color: '#D4537E' }}>Let's make something beautiful together.</p>
+          <p style={{ ...para, fontFamily: 'Playfair Display, serif', fontStyle: 'italic', fontSize: '19px', color: '#D4537E' }}>Let's make something beautiful together.</p>
         </div>
       </div>
     </section>
