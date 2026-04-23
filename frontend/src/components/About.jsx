@@ -28,7 +28,7 @@ export default function About() {
             maxWidth: isMobile ? '280px' : '100%',
             margin: isMobile ? '0 auto' : '0',
           }}>
-            <img src="/assets/onela.jpeg" alt="Onela" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }} />
+            <img src="/assets/onela.jpg" alt="Onela" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }} />
           </div>
           <div style={{
             position: 'absolute',
