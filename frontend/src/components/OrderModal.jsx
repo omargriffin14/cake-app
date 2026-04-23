@@ -102,9 +102,11 @@ const closeBtn = {
 
 const modalHeader = {
   padding: '1.75rem 2rem 1rem',
+  height: '200px',
   borderBottom: '1px solid rgba(44,40,40,0.08)',
   display: 'flex',
   justifyContent: 'center',
+  alignItems: 'center',
 }
 
 const modalBody = {
