@@ -14,7 +14,7 @@ export default function Navbar({ onOrderClick }) {
 
         {/* Center links */}
         <div style={navLinks}>
-          {['Gallery', 'About', 'Contact'].map(link => (
+          {['Gallery', 'About', 'Contact'].map((link) => (
             
               key={link}
               href={`#${link.toLowerCase()}`}
