@@ -13,7 +13,7 @@ export default function Navbar({ onOrderClick }) {
     <nav style={{ ...nav, boxShadow: scrolled ? '0 2px 20px rgba(44,40,40,0.08)' : 'none' }}>
       <div style={navInner}>
         <a href="#" style={{ display: 'flex', alignItems: 'center' }}>
-          <img src="/assets/logo.png" alt="Nelas Bakery" style={{ height: "100px", width: 'auto' }} />
+          <img src="/assets/logo.png" alt="Nelas Bakery" style={{ height: "120px", width: 'auto' }} />
         </a>
         <div style={navLinks}>
           <a href="#gallery" style={navLink}>Gallery</a>
