@@ -2,7 +2,7 @@ export default function Hero({ onOrderClick }) {
   return (
     <section style={heroWrap}>
       <div style={overlay} />
-      <img src="/assets/cake3v2.PNG" alt="Hero cake" style={heroImg} />
+      <img src="/assets/cake3.PNG" alt="Hero cake" style={heroImg} />
       <div style={heroContent}>
         <span className="section-label" style={{ color: 'rgba(255,255,255,0.8)', fontSize: '14px' }}>
           Handcrafted to order · Raleigh, NC
