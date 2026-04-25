@@ -30,6 +30,7 @@ jobs:
             --parameters '{"commands":[
               "cd /usr/bin/cake-app",
               "git fetch origin",
+              "git checkout main"
               "git reset --hard origin/main",
               "cd backend",
               "docker build --no-cache -t nelas-bakery-backend .",
