@@ -59,6 +59,7 @@ const createOrder = async (req, res) => {
       id: result.insertId,
       customer_name,
       customer_email,
+      customer_phone,
       cake_flavor,
       cake_flavor_other,
       shape,
@@ -69,7 +70,8 @@ const createOrder = async (req, res) => {
       size_other,
       border,
       border_other,
-      custom_notes
+      custom_notes,
+      image_url
     };
     
     await sendNotificationEmail(order);
