@@ -27,7 +27,7 @@ jobs:
           COMMAND_ID=$(aws ssm send-command \
             --instance-ids ${{ secrets.EC2_INSTANCE_ID }} \
             --document-name "AWS-RunShellScript" \
-            --parameters '{"commands":["export HOME=/root","git config --global --add safe.directory /usr/bin/cake-app","cd /usr/bin/cake-app","git fetch origin","git checkout main","git reset --hard origin/main","cd backend","docker build --no-cache -t nelas-bakery-backend .","docker stop cake-backend || true","docker rm cake-backend || true","docker run -d -p 5000:5000 --restart always --name cake-backend nelas-bakery-backend"]}' \
+            --parameters '{"commands":["export HOME=/root","git config --global --add safe.directory /usr/bin/cake-app","cd /usr/bin/cake-app","git pull","cd backend","docker build --no-cache -t nelas-bakery-backend .","docker stop cake-backend || true","docker rm cake-backend || true","docker run -d -p 5000:5000 --restart always --name cake-backend nelas-bakery-backend"]}' \
             --query "Command.CommandId" \
             --output text)
 
