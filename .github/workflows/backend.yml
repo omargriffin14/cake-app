@@ -29,8 +29,8 @@ jobs:
             --document-name "AWS-RunShellScript" \
             --parameters '{"commands":[
               "cd /usr/bin/cake-app",
-              "sleep 10",
-              "git pull",
+              "git fetch origin",
+              "git reset --hard origin/main",
               "cd backend",
               "docker build --no-cache -t nelas-bakery-backend .",
               "docker stop cake-backend || true",
