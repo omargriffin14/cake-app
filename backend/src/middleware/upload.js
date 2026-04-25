@@ -1,8 +1,8 @@
-const AWS = require('aws-sdk');
+const { S3Client } = require('@aws-sdk/client-s3');
 const multer = require('multer');
 const multerS3 = require('multer-s3');
 
-const s3 = new AWS.S3({ region: 'us-east-1' });
+const s3 = new S3Client({ region: 'us-east-1' });
 
 const upload = multer({
   storage: multerS3({
