@@ -19,7 +19,7 @@ export default function Confirmation({ name, form }) {
         Order received!
       </h2>
       <p style={{ color: '#7A7070', fontSize: '15px', marginBottom: '2rem', lineHeight: '1.6' }}>
-        Thank you, {name}! We have received your order and will reach out to you shortly with pricing, a due date, and any additional details needed to complete your order.
+        Thank you, {name}! We have received your order and will reach out to you shortly with pricing, a due date request, and any additional details needed to complete your order.
       </p>
 
       <div style={{
