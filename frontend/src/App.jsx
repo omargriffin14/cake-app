@@ -22,4 +22,4 @@ export default function App() {
   )
 }
 
-// v1.2
+// v1.3
