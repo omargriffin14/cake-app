@@ -27,13 +27,25 @@ jobs:
           aws ssm send-command \
             --instance-ids ${{ secrets.EC2_INSTANCE_ID }} \
             --document-name "AWS-RunShellScript" \
-            --parameters commands='[
+            --parameters '{"commands":[
               "cd /usr/bin/cake-app",
+              "sleep 10",
               "git pull",
               "cd backend",
-              "docker build -t nelas-bakery-backend .",
+              "docker build --no-cache -t nelas-bakery-backend .",
               "docker stop cake-backend || true",
               "docker rm cake-backend || true",
               "docker run -d -p 5000:5000 --restart always --name cake-backend nelas-bakery-backend"
-            ]' \
+            ]}' \
+            --output text
+
+      - name: Wait for deployment
+        run: sleep 60
+
+      - name: Verify container is running
+        run: |
+          aws ssm send-command \
+            --instance-ids ${{ secrets.EC2_INSTANCE_ID }} \
+            --document-name "AWS-RunShellScript" \
+            --parameters '{"commands":["docker ps | grep cake-backend"]}' \
             --output text
