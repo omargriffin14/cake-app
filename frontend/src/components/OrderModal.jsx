@@ -47,7 +47,7 @@ export default function OrderModal({ onClose }) {
 
         <div style={modalBody}>
           {submitted ? (
-            <Confirmation name={form.customer_name} />
+            <Confirmation name={form.customer_name} form={form} />
           ) : (
             <>
               <StepIndicator current={step} />
