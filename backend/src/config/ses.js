@@ -30,7 +30,8 @@ const sendNotificationEmail = async (order) => {
                 <li><strong>Height:</strong> ${order.height === 'other' ? order.height_other : order.height}</li>
                 <li><strong>Size:</strong> ${order.size === 'other' ? order.size_other : order.size}</li>
                 <li><strong>Border:</strong> ${order.border === 'other' ? order.border_other : order.border}</li>
-                ${order.custom_notes ? `<li><strong>Notes:</strong> ${order.custom_notes}</li>` : ''}
+                <li><strong>Notes:</strong> ${order.custom_notes || 'None'}</li>
+                ${order.image_url ? `<li><strong>Inspiration Image:</strong> <a href="${order.image_url}">View Image</a></li>` : ''}
               </ul>
               <p style="color: #D4537E;"><strong>Please reach out to the customer to confirm pricing, due date, and any additional details.</strong></p>
             </div>
@@ -41,7 +42,7 @@ const sendNotificationEmail = async (order) => {
   };
 
   await ses.sendEmail(params).promise();
-  console.log(`Order notification sent to nelasbakeryofficial@gmail.com`);
+  console.log('Order notification sent to nelasbakeryofficial@gmail.com');
 };
 
 module.exports = { sendNotificationEmail };
