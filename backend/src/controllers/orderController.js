@@ -1,8 +1,21 @@
 const { getPool } = require('../config/db');
-
 const { sendNotificationEmail } = require('../config/ses');
+const { S3Client, GetObjectCommand } = require('@aws-sdk/client-s3');
+const { getSignedUrl } = require('@aws-sdk/s3-request-presigner');
+
+const s3Client = new S3Client({ region: 'us-east-1' });
 
 const nullify = (val) => (val === undefined || val === '' ? null : val);
+
+const getPresignedUrl = async (imageUrl) => {
+  if (!imageUrl) return null;
+  const key = imageUrl.split('.amazonaws.com/')[1];
+  const command = new GetObjectCommand({
+    Bucket: process.env.S3_UPLOADS_BUCKET,
+    Key: key
+  });
+  return await getSignedUrl(s3Client, command, { expiresIn: 604800 });
+};
 
 const createOrder = async (req, res) => {
   try {
@@ -55,6 +68,8 @@ const createOrder = async (req, res) => {
       ]
     );
 
+    const presignedUrl = await getPresignedUrl(image_url);
+
     const order = {
       id: result.insertId,
       customer_name,
@@ -71,9 +86,9 @@ const createOrder = async (req, res) => {
       border,
       border_other,
       custom_notes,
-      image_url
+      image_url: presignedUrl
     };
-    
+
     await sendNotificationEmail(order);
 
     res.status(201).json({
