@@ -1,5 +1,4 @@
 const { getPool } = require('../config/db');
-const { sendConfirmationEmail } = require('../config/ses');
 
 const nullify = (val) => (val === undefined || val === '' ? null : val);
 
@@ -70,8 +69,6 @@ const createOrder = async (req, res) => {
       border_other,
       custom_notes
     };
-
-    await sendConfirmationEmail(order);
 
     res.status(201).json({
       message: 'Order placed successfully',
