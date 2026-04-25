@@ -27,4 +27,4 @@ const start = async () => {
 
 start();
 
-// v1.1
+// v1.2 - testing CI/CD
