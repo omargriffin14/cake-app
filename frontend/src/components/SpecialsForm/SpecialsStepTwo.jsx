@@ -53,6 +53,10 @@ export default function SpecialsStepTwo({ form, update, next, back }) {
           ))}
         </div>
 
+        <p style={{ fontSize: '13px', color: '#7A7070', marginBottom: '1rem', lineHeight: '1.6' }}>
+  You may specify how many of each flavor you would like in the special instructions field below.
+</p>
+        
         <p style={sectionTitle}>SPECIAL INSTRUCTIONS</p>
         <div className="field">
           <textarea
