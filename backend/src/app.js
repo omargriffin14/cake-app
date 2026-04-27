@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const { initPool } = require('./config/db');
 const orderRoutes = require('./routes/orders');
+const specialsRoutes = require('./routes/specials');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -16,6 +17,7 @@ app.get('/api/health', (req, res) => {
 });
 
 app.use('/api/orders', orderRoutes);
+app.use('/api/specials', specialsRoutes);
 
 // Start server after DB pool is ready
 const start = async () => {
@@ -26,5 +28,4 @@ const start = async () => {
 };
 
 start();
-
 // v2.1 - testing CI/CD
