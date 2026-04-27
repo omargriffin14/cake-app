@@ -45,4 +45,45 @@ const sendNotificationEmail = async (order) => {
   console.log('Order notification sent to nelasbakeryofficial@gmail.com');
 };
 
-module.exports = { sendNotificationEmail };
+const sendSpecialOrderNotification = async (order) => {
+  const params = {
+    Source: 'orders@nelasbakery.com',
+    Destination: {
+      ToAddresses: ['nelasbakeryofficial@gmail.com']
+    },
+    Message: {
+      Subject: {
+        Data: `New Mother's Day Minis Order #${order.id} — ${order.customer_name}`
+      },
+      Body: {
+        Html: {
+          Data: `
+            <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+              <h2 style="color: #D4537E;">New Mother's Day Minis Order!</h2>
+              <p>A new special order has been placed on nelasbakery.com</p>
+              <h3>Customer Details:</h3>
+              <ul>
+                <li><strong>Name:</strong> ${order.customer_name}</li>
+                <li><strong>Email:</strong> ${order.customer_email}</li>
+                <li><strong>Phone:</strong> ${order.customer_phone || 'Not provided'}</li>
+              </ul>
+              <h3>Order Details:</h3>
+              <ul>
+                <li><strong>Flavor:</strong> ${order.flavor}</li>
+                <li><strong>Quantity:</strong> ${order.quantity}</li>
+                <li><strong>Price:</strong> $${order.quantity_price}</li>
+                <li><strong>Special Instructions:</strong> ${order.special_instructions || 'None'}</li>
+              </ul>
+              <p style="color: #D4537E;"><strong>Please reach out to the customer to confirm pickup details.</strong></p>
+            </div>
+          `
+        }
+      }
+    }
+  };
+
+  await ses.sendEmail(params).promise();
+  console.log('Special order notification sent to nelasbakeryofficial@gmail.com');
+};
+
+module.exports = { sendNotificationEmail, sendSpecialOrderNotification };
