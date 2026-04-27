@@ -12,8 +12,8 @@ export const submitOrder = async (formData) => {
 }
 
 export const submitSpecialOrder = async (formData) => {
-  const response = await api.post('/specials/orders', formData);
-  return response.data;
+  const response = await api.post('/specials/orders', formData)
+  return response.data
 }
 
 export default api
