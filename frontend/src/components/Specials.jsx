@@ -7,7 +7,7 @@ export default function Specials({ onOrderClick }) {
           <h2 style={heading}>Mother's Day Minis</h2>
           <div style={divider} />
           <p style={sub}>
-            Celebrate the special women in your life with a beautiful set of handcrafted mini cupcakes. 
+            Celebrate the special women in your life with a beautiful set of handcrafted cupcakes. 
             Made with love and care, each cupcake is a little gift worth savoring.
           </p>
 
