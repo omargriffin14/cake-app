@@ -1,0 +1,163 @@
+export default function Specials({ onOrderClick }) {
+  return (
+    <section id="specials" style={section}>
+      <div style={inner}>
+        <div style={textCol}>
+          <span className="section-label">Limited Time</span>
+          <h2 style={heading}>Mother's Day Minis</h2>
+          <div style={divider} />
+          <p style={sub}>
+            Celebrate the special women in your life with a beautiful set of handcrafted mini cupcakes. 
+            Made with love and care, each cupcake is a little gift worth savoring.
+          </p>
+
+          <div style={flavorList}>
+            {[
+              { name: 'Strawberry Rose', desc: 'Vanilla sponge, rose cream, fresh berries' },
+              { name: 'Lemon Blueberry', desc: 'Chiffon, blueberry compote, lemon cream' },
+              { name: 'Choc Raspberry', desc: 'Dark chocolate, jam centre, ganache' },
+            ].map(f => (
+              <div key={f.name} style={flavorItem}>
+                <p style={{ fontWeight: '500', fontSize: '14px', color: '#2C2828', margin: 0 }}>{f.name}</p>
+                <p style={{ fontSize: '13px', color: '#7A7070', margin: '2px 0 0' }}>{f.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          <div style={priceRow}>
+            {[
+              { label: 'Mini set', count: 3, price: 12 },
+              { label: 'Gift box', count: 6, price: 20 },
+              { label: 'Party pack', count: 12, price: 35 },
+            ].map(p => (
+              <div key={p.label} style={priceCard}>
+                <p style={{ fontSize: '28px', fontWeight: '400', fontFamily: 'Playfair Display, serif', color: '#2C2828', margin: 0 }}>{p.count}</p>
+                <p style={{ fontSize: '12px', color: '#7A7070', margin: '4px 0' }}>{p.label}</p>
+                <p style={{ fontSize: '16px', fontWeight: '500', color: '#D4537E', margin: 0 }}>${p.price}</p>
+              </div>
+            ))}
+          </div>
+
+          <p style={deadline}>Order by May 8th — Limited availability</p>
+
+          <button className="btn-primary" onClick={onOrderClick} style={{ marginTop: '1.5rem' }}>
+            Order Now
+          </button>
+        </div>
+
+        <div style={imgCol}>
+          <div style={imgFrame}>
+            <div style={placeholder}>
+              <p style={{ fontFamily: 'Playfair Display, serif', fontSize: '20px', color: '#D4537E', margin: 0 }}>
+                Mother's Day
+              </p>
+              <p style={{ fontSize: '13px', color: '#7A7070', margin: '8px 0 0' }}>
+                Cupcake photo coming soon
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+const section = {
+  padding: '7rem 2rem',
+  background: '#FAF6F1',
+}
+
+const inner = {
+  maxWidth: '1100px',
+  margin: '0 auto',
+  display: 'grid',
+  gridTemplateColumns: '1fr 1fr',
+  gap: '5rem',
+  alignItems: 'center',
+}
+
+const textCol = {
+  display: 'flex',
+  flexDirection: 'column',
+}
+
+const heading = {
+  fontSize: 'clamp(32px, 4vw, 48px)',
+  fontWeight: '400',
+  color: '#2C2828',
+  marginBottom: '1rem',
+  fontFamily: 'Playfair Display, serif',
+}
+
+const divider = {
+  width: '48px',
+  height: '2px',
+  background: '#D4537E',
+  marginBottom: '1.5rem',
+}
+
+const sub = {
+  fontSize: '15px',
+  lineHeight: '1.85',
+  color: '#5A5252',
+  fontWeight: '300',
+  marginBottom: '1.5rem',
+}
+
+const flavorList = {
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '0.75rem',
+  marginBottom: '1.5rem',
+}
+
+const flavorItem = {
+  padding: '0.75rem 1rem',
+  background: 'white',
+  borderRadius: '8px',
+  border: '1px solid rgba(44,40,40,0.08)',
+}
+
+const priceRow = {
+  display: 'grid',
+  gridTemplateColumns: '1fr 1fr 1fr',
+  gap: '0.75rem',
+  marginBottom: '1rem',
+}
+
+const priceCard = {
+  textAlign: 'center',
+  padding: '1rem',
+  background: 'white',
+  borderRadius: '10px',
+  border: '1px solid rgba(44,40,40,0.08)',
+}
+
+const deadline = {
+  fontSize: '13px',
+  color: '#D4537E',
+  fontWeight: '500',
+  letterSpacing: '0.04em',
+}
+
+const imgCol = {
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+}
+
+const imgFrame = {
+  borderRadius: '20px',
+  overflow: 'hidden',
+  width: '100%',
+  aspectRatio: '4/5',
+  background: '#FBEAF0',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+}
+
+const placeholder = {
+  textAlign: 'center',
+  padding: '2rem',
+}
