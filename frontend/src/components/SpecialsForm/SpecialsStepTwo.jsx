@@ -58,7 +58,7 @@ export default function SpecialsStepTwo({ form, update, next, back }) {
           <textarea
             value={form.special_instructions}
             onChange={e => update({ special_instructions: e.target.value })}
-            placeholder="Allergy notes, name to pipe on cupcake, gift message..."
+            placeholder="Allergy notes, special requests..."
             rows={3}
           />
         </div>
