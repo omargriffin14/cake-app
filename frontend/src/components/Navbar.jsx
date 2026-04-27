@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-export default function Navbar({ onOrderClick }) {
+export default function Navbar({ onOrderClick, onSpecialsClick }) {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768)
@@ -65,6 +65,7 @@ export default function Navbar({ onOrderClick }) {
           ) : (
             <>
               <div style={{ display: 'flex', gap: '2.5rem', position: 'absolute', left: '50%', transform: 'translateX(-50%)' }}>
+                <a href="#specials" style={navLink}>Specials</a>
                 <a href="#gallery" style={navLink}>Gallery</a>
                 <a href="#about" style={navLink}>About</a>
                 <a href="#contact" style={navLink}>Contact</a>
@@ -105,6 +106,7 @@ export default function Navbar({ onOrderClick }) {
           flexDirection: 'column',
           gap: '1.5rem',
         }}>
+          <a href="#specials" style={mobileNavLink} onClick={() => { setMenuOpen(false); onSpecialsClick(); }}>Specials</a>
           <a href="#gallery" style={mobileNavLink} onClick={() => setMenuOpen(false)}>Gallery</a>
           <a href="#about" style={mobileNavLink} onClick={() => setMenuOpen(false)}>About</a>
           <a href="#contact" style={mobileNavLink} onClick={() => setMenuOpen(false)}>Contact</a>
