@@ -43,62 +43,7 @@ Customers can browse the site, view the gallery, learn about the baker, and plac
 
 ## Project Structure
 
-cake-app/
-├── frontend/                        # React application
-│   ├── public/
-│   │   └── assets/                  # Images, logo, favicon
-│   ├── src/
-│   │   ├── components/
-│   │   │   ├── Navbar.jsx
-│   │   │   ├── Hero.jsx
-│   │   │   ├── Gallery.jsx
-│   │   │   ├── About.jsx
-│   │   │   ├── Contact.jsx
-│   │   │   ├── Specials.jsx
-│   │   │   ├── OrderModal.jsx
-│   │   │   ├── SpecialsModal.jsx
-│   │   │   ├── OrderForm/
-│   │   │   │   ├── StepOne.jsx
-│   │   │   │   ├── StepTwo.jsx
-│   │   │   │   ├── StepThree.jsx
-│   │   │   │   ├── StepFour.jsx
-│   │   │   │   └── Confirmation.jsx
-│   │   │   └── SpecialsForm/
-│   │   │       ├── SpecialsStepOne.jsx
-│   │   │       ├── SpecialsStepTwo.jsx
-│   │   │       ├── SpecialsStepThree.jsx
-│   │   │       └── SpecialsConfirmation.jsx
-│   │   ├── services/
-│   │   │   └── api.js               # Axios API calls
-│   │   ├── styles/
-│   │   │   └── index.css
-│   │   ├── App.jsx
-│   │   └── main.jsx
-│   ├── index.html
-│   ├── package.json
-│   └── vite.config.js
-│
-├── backend/                         # Node.js/Express API
-│   ├── src/
-│   │   ├── config/
-│   │   │   ├── db.js                # RDS MySQL connection via Secrets Manager
-│   │   │   └── ses.js               # SES email notifications
-│   │   ├── controllers/
-│   │   │   ├── orderController.js   # Cake order logic
-│   │   │   └── specialsController.js # Specials order logic
-│   │   ├── middleware/
-│   │   │   └── upload.js            # S3 image upload handler
-│   │   ├── routes/
-│   │   │   ├── orders.js
-│   │   │   └── specials.js
-│   │   └── app.js
-│   ├── Dockerfile
-│   └── package.json
-│
-└── .github/
-└── workflows/
-├── frontend.yml             # Frontend CI/CD pipeline
-└── backend.yml              # Backend CI/CD pipeline
+In Progress...
 
 ---
 
@@ -123,18 +68,7 @@ cake-app/
 
 ## AWS Architecture
 
-Customer Browser
-│ HTTPS
-▼
-CloudFront (nelasbakery.com)
-│
-├── /api/* ──────────────────► ALB ──► EC2 Backend (private subnet)
-│                                           │
-│                                           ├── RDS MySQL (private subnet)
-│                                           ├── S3 Uploads (customer images)
-│                                           └── SES (order notifications)
-│
-└── /* ──────────────────────► S3 Frontend Bucket
+In Progress...
 
 ---
 
