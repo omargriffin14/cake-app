@@ -154,7 +154,7 @@ Nela's Bakery is a custom cake business based in Raleigh, NC. Every cake is hand
 
 - **Instagram:** [@nelasbakeryofficial](https://instagram.com/nelasbakeryofficial)
 - **TikTok:** [@nelasbakeryofficial](https://tiktok.com/@nelasbakeryofficial)
-- **Email:** orders@nelasbakery.com
+- **Email:** nelasbakeryofficial@gmail.com
 - **Website:** [nelasbakery.com](https://nelasbakery.com)
 
 ---
