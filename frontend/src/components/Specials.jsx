@@ -1,10 +1,30 @@
+import { useState, useEffect } from 'react'
+
 export default function Specials({ onOrderClick }) {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768)
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768)
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
   return (
     <section id="specials" style={section}>
-      <div style={inner}>
+      <div style={{
+        maxWidth: '1100px',
+        margin: '0 auto',
+        display: 'grid',
+        gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr',
+        gap: isMobile ? '2.5rem' : '5rem',
+        alignItems: 'center',
+      }}>
         <div style={textCol}>
           <span className="section-label">Limited Time</span>
-          <h2 style={heading}>Mother's Day Minis</h2>
+          <h2 style={{
+            ...heading,
+            fontSize: isMobile ? '32px' : 'clamp(32px, 4vw, 48px)',
+          }}>Mother's Day Minis</h2>
           <div style={divider} />
           <p style={sub}>
             Celebrate the special women in your life with a beautiful set of handcrafted mini cupcakes.
@@ -13,9 +33,9 @@ export default function Specials({ onOrderClick }) {
 
           <div style={flavorList}>
             {[
-              { name: 'Strawberry Rose', desc: 'Vanilla sponge, rose cream, strawberry jam' },
-              { name: 'Lemon Blueberry', desc: 'Lemon cake, blueberry compote, lemon cream' },
-              { name: 'Choc Raspberry', desc: 'Dark chocolate, jam centre, chocolate buttercream' },
+              { name: 'Strawberry Rose', desc: 'Vanilla sponge, rose cream, fresh berries' },
+              { name: 'Lemon Blueberry', desc: 'Chiffon, blueberry compote, lemon cream' },
+              { name: 'Choc Raspberry', desc: 'Dark chocolate, jam centre, ganache' },
             ].map(f => (
               <div key={f.name} style={flavorItem}>
                 <p style={{ fontWeight: '500', fontSize: '14px', color: '#2C2828', margin: 0 }}>{f.name}</p>
@@ -45,8 +65,18 @@ export default function Specials({ onOrderClick }) {
           </button>
         </div>
 
-        <div style={imgCol}>
-          <div style={imgFrame}>
+        <div style={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          order: isMobile ? 0 : 0,
+        }}>
+          <div style={{
+            borderRadius: '20px',
+            overflow: 'hidden',
+            width: '100%',
+            aspectRatio: isMobile ? '3/2' : '4/5',
+          }}>
             <img
               src="/assets/MothersDay.jpg"
               alt="Mother's Day Mini Cupcakes"
@@ -64,22 +94,12 @@ const section = {
   background: '#FAF6F1',
 }
 
-const inner = {
-  maxWidth: '1100px',
-  margin: '0 auto',
-  display: 'grid',
-  gridTemplateColumns: '1fr 1fr',
-  gap: '5rem',
-  alignItems: 'center',
-}
-
 const textCol = {
   display: 'flex',
   flexDirection: 'column',
 }
 
 const heading = {
-  fontSize: 'clamp(32px, 4vw, 48px)',
   fontWeight: '400',
   color: '#2C2828',
   marginBottom: '1rem',
@@ -135,17 +155,4 @@ const deadline = {
   color: '#D4537E',
   fontWeight: '500',
   letterSpacing: '0.04em',
-}
-
-const imgCol = {
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-}
-
-const imgFrame = {
-  borderRadius: '20px',
-  overflow: 'hidden',
-  width: '100%',
-  aspectRatio: '4/5',
 }
