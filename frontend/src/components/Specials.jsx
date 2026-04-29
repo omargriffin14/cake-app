@@ -7,7 +7,7 @@ export default function Specials({ onOrderClick }) {
           <h2 style={heading}>Mother's Day Minis</h2>
           <div style={divider} />
           <p style={sub}>
-            Celebrate the special women in your life with a beautiful set of handcrafted cupcakes. 
+            Celebrate the special women in your life with a beautiful set of handcrafted mini cupcakes.
             Made with love and care, each cupcake is a little gift worth savoring.
           </p>
 
@@ -47,14 +47,11 @@ export default function Specials({ onOrderClick }) {
 
         <div style={imgCol}>
           <div style={imgFrame}>
-            <div style={placeholder}>
-              <p style={{ fontFamily: 'Playfair Display, serif', fontSize: '20px', color: '#D4537E', margin: 0 }}>
-                Mother's Day
-              </p>
-              <p style={{ fontSize: '13px', color: '#7A7070', margin: '8px 0 0' }}>
-                Cupcake photo coming soon
-              </p>
-            </div>
+            <img
+              src="/assets/MothersDay.jpg"
+              alt="Mother's Day Mini Cupcakes"
+              style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+            />
           </div>
         </div>
       </div>
@@ -151,13 +148,4 @@ const imgFrame = {
   overflow: 'hidden',
   width: '100%',
   aspectRatio: '4/5',
-  background: '#FBEAF0',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-}
-
-const placeholder = {
-  textAlign: 'center',
-  padding: '2rem',
 }
