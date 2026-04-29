@@ -13,9 +13,9 @@ export default function Specials({ onOrderClick }) {
 
           <div style={flavorList}>
             {[
-              { name: 'Strawberry Rose', desc: 'Vanilla sponge, rose cream, fresh berries' },
-              { name: 'Lemon Blueberry', desc: 'Chiffon, blueberry compote, lemon cream' },
-              { name: 'Choc Raspberry', desc: 'Dark chocolate, jam centre, ganache' },
+              { name: 'Strawberry Rose', desc: 'Vanilla sponge, rose cream, strawberry jam' },
+              { name: 'Lemon Blueberry', desc: 'Lemon cake, blueberry compote, lemon cream' },
+              { name: 'Choc Raspberry', desc: 'Dark chocolate, jam centre, chocolate buttercream' },
             ].map(f => (
               <div key={f.name} style={flavorItem}>
                 <p style={{ fontWeight: '500', fontSize: '14px', color: '#2C2828', margin: 0 }}>{f.name}</p>
