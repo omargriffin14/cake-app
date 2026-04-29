@@ -75,7 +75,7 @@ export default function Specials({ onOrderClick }) {
             borderRadius: '20px',
             overflow: 'hidden',
             width: '100%',
-            aspectRatio: isMobile ? '16/9' : '4/5',
+            aspectRatio: isMobile ? '9/16' : '4/5',
           }}>
             <img
               src="/assets/MothersDay.jpg"
