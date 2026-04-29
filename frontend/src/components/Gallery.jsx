@@ -3,6 +3,7 @@ const cakes = [
   { src: '/assets/cake2.jpeg', label: 'Baby Shower' },
   { src: '/assets/cake5.png',  label: 'Elegant Custom' },
   { src: '/assets/cake4.jpeg', label: 'Kids Party' },
+  { src: '/assets/cake6.jpeg', label: 'Sports Custom' },
 ]
 
 export default function Gallery() {
