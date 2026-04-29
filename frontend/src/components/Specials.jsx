@@ -75,12 +75,12 @@ export default function Specials({ onOrderClick }) {
             borderRadius: '20px',
             overflow: 'hidden',
             width: '100%',
-            aspectRatio: isMobile ? '3/2' : '4/5',
+            aspectRatio: isMobile ? '16/9' : '4/5',
           }}>
             <img
               src="/assets/MothersDay.jpg"
               alt="Mother's Day Mini Cupcakes"
-              style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+              style={{ width: '100%', height: '100%', objectFit: 'contain', background: '#FAF6F1' }}
             />
           </div>
         </div>
