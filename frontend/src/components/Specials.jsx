@@ -35,7 +35,7 @@ export default function Specials({ onOrderClick }) {
             {[
               { name: 'Strawberry Rose', desc: 'Vanilla sponge, rose cream, strawberry jam' },
               { name: 'Lemon Blueberry', desc: 'Lemon cake, blueberry compote, lemon cream' },
-              { name: 'Choc Raspberry', desc: 'Dark chocolate, jam centre, chocolate buttercream' },
+              { name: 'Choc Raspberry', desc: 'Chocolate cake, jam centre, chocolate buttercream' },
             ].map(f => (
               <div key={f.name} style={flavorItem}>
                 <p style={{ fontWeight: '500', fontSize: '14px', color: '#2C2828', margin: 0 }}>{f.name}</p>
@@ -80,7 +80,7 @@ export default function Specials({ onOrderClick }) {
             <img
               src="/assets/MothersDay.jpg"
               alt="Mother's Day Mini Cupcakes"
-              style={{ width: '100%', height: '100%', objectFit: 'cover', background: '#FAF6F1' }}
+              style={{ width: '100%', height: '100%', objectFit: 'cover' }}
             />
           </div>
         </div>
