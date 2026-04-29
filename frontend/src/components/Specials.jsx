@@ -80,7 +80,7 @@ export default function Specials({ onOrderClick }) {
             <img
               src="/assets/MothersDay.jpg"
               alt="Mother's Day Mini Cupcakes"
-              style={{ width: '100%', height: '100%', objectFit: 'contain', background: '#FAF6F1' }}
+              style={{ width: '100%', height: '100%', objectFit: 'cover', background: '#FAF6F1' }}
             />
           </div>
         </div>
