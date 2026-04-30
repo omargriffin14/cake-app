@@ -5,7 +5,7 @@ const DROPDOWNS = [
   },
   {
     label: 'Shape', field: 'shape', otherField: 'shape_other',
-    options: ['Round', 'Sheet', 'Heart']
+    options: ['Round', 'Half-Sheet', 'Heart']
   },
   {
     label: 'Height', field: 'height', otherField: 'height_other',
