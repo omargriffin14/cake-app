@@ -20,7 +20,6 @@ export default function App() {
         onSpecialsClick={() => setSpecialsOpen(true)}
       />
       <Hero onOrderClick={() => setOrderOpen(true)} />
-      <Specials onOrderClick={() => setSpecialsOpen(true)} />
       <Gallery />
       <About />
       <Contact onOrderClick={() => setOrderOpen(true)} />
