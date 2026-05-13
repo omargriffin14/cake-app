@@ -65,7 +65,6 @@ export default function Navbar({ onOrderClick, onSpecialsClick }) {
           ) : (
             <>
               <div style={{ display: 'flex', gap: '2.5rem', position: 'absolute', left: '50%', transform: 'translateX(-50%)' }}>
-                <a href="#specials" style={navLink}>Specials</a>
                 <a href="#gallery" style={navLink}>Gallery</a>
                 <a href="#about" style={navLink}>About</a>
                 <a href="#contact" style={navLink}>Contact</a>
@@ -106,7 +105,6 @@ export default function Navbar({ onOrderClick, onSpecialsClick }) {
           flexDirection: 'column',
           gap: '1.5rem',
         }}>
-          <a href="#specials" style={mobileNavLink} onClick={() => { setMenuOpen(false); onSpecialsClick(); }}>Specials</a>
           <a href="#gallery" style={mobileNavLink} onClick={() => setMenuOpen(false)}>Gallery</a>
           <a href="#about" style={mobileNavLink} onClick={() => setMenuOpen(false)}>About</a>
           <a href="#contact" style={mobileNavLink} onClick={() => setMenuOpen(false)}>Contact</a>
